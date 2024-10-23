@@ -85,28 +85,10 @@
         if (isMobile) {
             var viewFullScreen = document.getElementById('#canvas');
 
-            var orientation = (screen.orientation || {}).type || screen.mozOrientation || screen.msOrientation;
-            if (viewFullScreen.requestFullscreen) /* API spec */
-                {  
+              
                     viewFullScreen.requestFullscreen();
                     screen.orientation.lock("landscape-primary");
-                }
-                else if (viewFullScreen.mozRequestFullScreen) /* Firefox */
-                {
-                    viewFullScreen.mozRequestFullScreen();
-                    screen.mozLockOrientation.lock("landscape-primary");
-                }
-                else if (viewFullScreen.webkitRequestFullscreen) /* Chrome, Safari and Opera */
-                {  
-                    viewFullScreen.webkitRequestFullscreen();
-                    screen.orientation.lock("landscape-primary");
-                }
-                else if (viewFullScreen.msRequestFullscreen) /* IE/Edge */
-                {  
-                    viewFullScreen.msRequestFullscreen();
-                    screen.msLockOrientation.lock("landscape-primary");
-                }
-                viewFullScreen.removeEventListener('touchend', ActivateFullscreen);    
+                   
             
             container.className = "unity-mobile";
             config.devicePixelRatio = 3;
