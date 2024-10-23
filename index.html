@@ -83,10 +83,7 @@
             isMobile = navigator.maxTouchPoints > 2;
         var viewFullScreen = document.getElementById('#canvas');
         if (isMobile) {
-            var viewFullScreen = document.getElementById('#canvas');
-
-              
-                    viewFullScreen.requestFullscreen();
+            
                     screen.orientation
             .lock("landscape")
             .then(() => {
