@@ -87,7 +87,16 @@
 
               
                     viewFullScreen.requestFullscreen();
-                    screen.orientation.lock("landscape-primary");
+                    screen.orientation
+            .lock("landscape")
+            .then(() => {
+              console.log(`Locked to ${oppositeOrientation}`);
+              alert(`Locked to ${oppositeOrientation}`);
+            })
+            .catch((error) => {
+              console.log(`${error}\n`);
+              alert(`${error}\n`);
+            });
                    
             
             container.className = "unity-mobile";
